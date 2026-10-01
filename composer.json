@@ -1,0 +1,18 @@
+{
+    "name": "omnitrade/paypal",
+    "type": "library",
+    "description": "Omnitrade PayPal: orders approved on PayPal's page and captured on return, authorizations, refunds and webhook events, over the v2 REST API.",
+    "keywords": ["payment", "paypal", "omnitrade"],
+    "license": "LGPL-3.0-or-later",
+    "authors": [{"name": "Marco Meyer", "email": "marco.meyer@glitchr.io"}],
+    "require": {
+        "php": ">=8.2",
+        "glitchr/omnitrade": "^1.0@dev",
+        "symfony/http-client-contracts": "^3.0"
+    },
+    "require-dev": {"phpunit/phpunit": "^11.0", "symfony/http-client": "^6.4|^7.0|^8.0"},
+    "suggest": {"symfony/http-client": "The HTTP client the gateway talks through"},
+    "autoload": {"psr-4": {"Omnitrade\\PayPal\\": ""}, "exclude-from-classmap": ["/Tests/"]},
+    "autoload-dev": {"psr-4": {"Omnitrade\\PayPal\\Tests\\": "Tests/"}},
+    "config": {"sort-packages": true}
+}
