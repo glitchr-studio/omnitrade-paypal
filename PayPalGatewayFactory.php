@@ -3,7 +3,6 @@
 namespace Omnitrade\PayPal;
 
 use Omnitrade\Config;
-use Omnitrade\Exception\InvalidConfigException;
 use Omnitrade\GatewayFactory;
 use Omnitrade\PayPal\Action\AuthorizeAction;
 use Omnitrade\PayPal\Action\CaptureAction;
@@ -38,13 +37,7 @@ final class PayPalGatewayFactory extends GatewayFactory
             'webhook_id' => null,
             'timeout' => 15,
             'omnitrade.api' => function (Config $c) {
-                $http = $this->http;
-                if (!$http) {
-                    if (!class_exists(HttpClient::class)) {
-                        throw new InvalidConfigException('The "paypal" gateway needs symfony/http-client.');
-                    }
-                    $http = HttpClient::create();
-                }
+                $http = $this->http ?? HttpClient::create();
 
                 return new Api($http, (string) $c['client_id'], (string) $c['secret'], (bool) $c['sandbox'], $c['webhook_id'] ?: null, (int) $c['timeout']);
             },
