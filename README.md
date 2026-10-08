@@ -34,4 +34,4 @@ Credentials: a REST app in the Developer Dashboard (its client id and secret, sa
 are separate), and a webhook on it for `CHECKOUT.ORDER.APPROVED`, `PAYMENT.CAPTURE.COMPLETED`,
 `PAYMENT.CAPTURE.DENIED`, `PAYMENT.CAPTURE.REFUNDED` - its id is `webhook_id`.
 
-License: LGPL-3.0-or-later.
+License: MIT since 2026-10-09; earlier versions remain published under LGPL-3.0-or-later.
